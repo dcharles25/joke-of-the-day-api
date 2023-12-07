@@ -1,6 +1,4 @@
-# Project Title
-
-Joke Of The Day REST API
+# Joke Of The Day REST API
 
 ## Description
 
