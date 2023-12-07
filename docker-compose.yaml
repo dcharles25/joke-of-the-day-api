@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+  jotd-api:
+    build: 
+      context: ./
+    restart: always
+    depends_on:
+      - mongo
+    ports:
+      - 8080:8080
+    environment:
+      DB_URL: mongodb://${DATABASE_ROOTUSER}:${DATABASE_ROOTPASSWORD}@mongo:27017
+      DB_NAME: Interview
+      DB_COLLECTION_NAME: joke-of-the-day
+
+  mongo:
+    image: mongo
+    restart: always
+    ports: 
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${DATABASE_ROOTUSER}
+      MONGO_INITDB_ROOT_PASSWORD: ${DATABASE_ROOTPASSWORD}
