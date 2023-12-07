@@ -10,7 +10,7 @@ A REST API that allows clients to perform CRUD operations on a Joke of the Day r
 
 ### Dependencies
 
-* This project will require Docker
+* This project requires Docker.
 
 ### Building and Deploying 
 
@@ -30,7 +30,7 @@ docker-compose ps
 
 By default, the API can be reached at http://localhost:8080/api/joke-of-the-day
 
-The API supports the following REST calls: 
+The API supports the following REST calls:
 
 ```
 GET /api/joke-of-the-day/collection
@@ -41,4 +41,12 @@ PUT /api/joke-of-the-day/{id}
 DELETE /api/joke-of-the-day/{id}
 ```
 
+The API consumes and produces json. Below you'll find an example body of a POST request to get things started. 
 
+```
+{
+    "date": "2023-12-18",
+    "joke": "What happens to a frog's car when it breaks down? It gets toad away.",
+    "description": "Just a good old fashioned toad joke."
+}
+```
